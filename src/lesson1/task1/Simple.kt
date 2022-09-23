@@ -53,7 +53,7 @@ fun quadraticRootProduct(a: Double, b: Double, c: Double): Double {
  * Пример главной функции
  */
 fun main() {
-    val x1x2 = quadraticRootProduct(1.0, 13.0, 42.0)
+    val x1x2 = numberRevert(3801 )
     println("Root product: $x1x2")
 }
 
@@ -98,7 +98,11 @@ fun trackLength(x1: Double, y1: Double, x2: Double, y2: Double): Double = TODO()
  * Пользователь задает целое число, больше или равно 100 (например, 3801).
  * Определить третью цифру справа в этом числе (в данном случае 8).
  */
-fun thirdDigit(number: Int): Int = TODO()
+fun thirdDigit(number: Int): Int = {
+
+    val third: Int = (number / Math.pow(10.0, 2.0).toInt()) % 10.0
+    return third
+}
 
 /**
  * Простая (2 балла)
@@ -107,7 +111,15 @@ fun thirdDigit(number: Int): Int = TODO()
  * прибыл на станцию назначения в h2 часов m2 минут того же дня (например в 13:01).
  * Определите время поезда в пути в минутах (в данном случае 216).
  */
-fun travelMinutes(hoursDepart: Int, minutesDepart: Int, hoursArrive: Int, minutesArrive: Int): Int = TODO()
+fun travelMinutes(hoursDepart: Int, minutesDepart: Int, hoursArrive: Int, minutesArrive: Int): Int{
+
+// 1 hours = 60 min
+        // 9-7=2
+        val duration_hours = hoursArrive-hoursDepart
+        val duration_minutes = minutesArrive-minutesDepart
+        val result = duration_minutes+(duration_hours*60)
+        return result
+}
 
 /**
  * Простая (2 балла)
@@ -124,4 +136,13 @@ fun accountInThreeYears(initial: Int, percent: Int): Double = TODO()
  * Пользователь задает целое трехзначное число (например, 478).
  * Необходимо вывести число, полученное из заданного перестановкой цифр в обратном порядке (например, 874).
  */
-fun numberRevert(number: Int): Int = TODO()
+fun numberRevert(number: Int): Int ={
+
+    val number1 =x
+    val number2 =y
+    val number3 =z
+    when(number1, number2, number3){
+        return number3, number2, number1
+
+}
+}
