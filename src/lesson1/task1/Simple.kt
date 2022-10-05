@@ -53,7 +53,7 @@ fun quadraticRootProduct(a: Double, b: Double, c: Double): Double {
  * Пример главной функции
  */
 fun main() {
-    val x1x2 = numberRevert(3801 )
+    val x1x2 = lengthInMeters(8, 2, 11  )
     println("Root product: $x1x2")
 }
 
@@ -65,7 +65,9 @@ fun main() {
  * Пользователь задает время в часах, минутах и секундах, например, 8:20:35.
  * Рассчитать время в секундах, прошедшее с начала суток (30035 в данном случае).
  */
-fun seconds(hours: Int, minutes: Int, seconds: Int): Int = TODO()
+fun seconds(hours: Int, minutes: Int, seconds: Int): Int = hours * 3600 + minutes * 60 + seconds
+
+
 
 /**
  * Тривиальная (1 балл)
@@ -74,7 +76,15 @@ fun seconds(hours: Int, minutes: Int, seconds: Int): Int = TODO()
  * Определить длину того же отрезка в метрах (в данном случае 18.98).
  * 1 сажень = 3 аршина = 48 вершков, 1 вершок = 4.445 см.
  */
-fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double = TODO()
+fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double ={
+    val sagenes_m = 2.1336
+    val arshins_m 2= 0.7112
+    val vershoks_m = 0.04445
+    return (sagenes * sagenes_m) + (arshins * arshins_m) + (vershoks * vershoks_m)}
+
+
+
+
 
 /**
  * Тривиальная (1 балл)
@@ -82,7 +92,12 @@ fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double = TODO()
  * Пользователь задает угол в градусах, минутах и секундах (например, 36 градусов 14 минут 35 секунд).
  * Вывести значение того же угла в радианах (например, 0.63256).
  */
-fun angleInRadian(deg: Int, min: Int, sec: Int): Double = TODO()
+fun angleInRadian(deg: Int, min: Int, sec: Int): Double ={
+    val full_degrees : Double = deg + ((1/60.0)*min)+((1/3600.0)*sec)
+    val radians = (PI/180)*full_degrees
+    return radians
+}
+
 
 /**
  * Тривиальная (1 балл)
@@ -90,7 +105,9 @@ fun angleInRadian(deg: Int, min: Int, sec: Int): Double = TODO()
  * Найти длину отрезка, соединяющего точки на плоскости с координатами (x1, y1) и (x2, y2).
  * Например, расстояние между (3, 0) и (0, 4) равно 5
  */
-fun trackLength(x1: Double, y1: Double, x2: Double, y2: Double): Double = TODO()
+fun trackLength(x1: Double, y1: Double, x2: Double, y2: Double): Double = {
+    return sqrt((sqr(x2 - x1) +sqr(y2 - y1)))
+}
 
 /**
  * Простая (2 балла)
@@ -99,8 +116,7 @@ fun trackLength(x1: Double, y1: Double, x2: Double, y2: Double): Double = TODO()
  * Определить третью цифру справа в этом числе (в данном случае 8).
  */
 fun thirdDigit(number: Int): Int = {
-
-    val third: Int = (number / Math.pow(10.0, 2.0).toInt()) % 10.0
+    val third : Int = (number / Math.pow(10.0,2.0)tolnt()) % 10
     return third
 }
 
@@ -136,13 +152,4 @@ fun accountInThreeYears(initial: Int, percent: Int): Double = TODO()
  * Пользователь задает целое трехзначное число (например, 478).
  * Необходимо вывести число, полученное из заданного перестановкой цифр в обратном порядке (например, 874).
  */
-fun numberRevert(number: Int): Int ={
-
-    val number1 =x
-    val number2 =y
-    val number3 =z
-    when(number1, number2, number3){
-        return number3, number2, number1
-
-}
-}
+fun numberRevert(number: Int): Int = TODO()
