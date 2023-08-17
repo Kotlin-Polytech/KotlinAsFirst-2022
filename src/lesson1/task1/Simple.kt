@@ -52,48 +52,63 @@ fun quadraticRootProduct(a: Double, b: Double, c: Double): Double {
 /**
  * Пример главной функции
  */
+/*
 fun main() {
     val x1x2 = quadraticRootProduct(1.0, 13.0, 42.0)
     println("Root product: $x1x2")
 }
+*/
 
 /**
- * Тривиальная (3 балла).
+ * Тривиальная (3 балла) РЕШЕНО
  *
  * Задача имеет повышенную стоимость как первая в списке.
  *
  * Пользователь задает время в часах, минутах и секундах, например, 8:20:35.
  * Рассчитать время в секундах, прошедшее с начала суток (30035 в данном случае).
  */
-fun seconds(hours: Int, minutes: Int, seconds: Int): Int = TODO()
+fun seconds(hours: Int, minutes: Int, seconds: Int): Int =
+    (hours * 60 * 60 + minutes * 60 + seconds)
+
+fun main() {
+    println(travelMinutes(9, 25, 13, 1))
+}
 
 /**
- * Тривиальная (1 балл)
+ * Тривиальная (1 балл) РЕШЕНО
  *
  * Пользователь задает длину отрезка в саженях, аршинах и вершках (например, 8 саженей 2 аршина 11 вершков).
  * Определить длину того же отрезка в метрах (в данном случае 18.98).
  * 1 сажень = 3 аршина = 48 вершков, 1 вершок = 4.445 см.
  */
-fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double = TODO()
+fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double =
+    (((sagenes * 48) + (arshins * 48 / 3) + vershoks) * 4.445) / 100
 
 /**
- * Тривиальная (1 балл)
+ * Тривиальная (1 балл) РЕШЕНО
  *
  * Пользователь задает угол в градусах, минутах и секундах (например, 36 градусов 14 минут 35 секунд).
  * Вывести значение того же угла в радианах (например, 0.63256).
  */
-fun angleInRadian(deg: Int, min: Int, sec: Int): Double = TODO()
+fun angleInRadian(deg: Int, min: Int, sec: Int): Double {
+    val a = deg + (min / 60.0) + (sec / 3600.0)
+    val aRadian = (2.0 * PI * a) / 360.0
+    return aRadian
+}
 
 /**
- * Тривиальная (1 балл)
+ * Тривиальная (1 балл) РЕШЕНО
  *
  * Найти длину отрезка, соединяющего точки на плоскости с координатами (x1, y1) и (x2, y2).
  * Например, расстояние между (3, 0) и (0, 4) равно 5
  */
-fun trackLength(x1: Double, y1: Double, x2: Double, y2: Double): Double = TODO()
+fun trackLength(x1: Double, y1: Double, x2: Double, y2: Double): Double {
+    val dSqr = (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1)
+    return sqrt(dSqr)
+}
 
 /**
- * Простая (2 балла)
+ * Простая (2 балла) Надо подумать
  *
  * Пользователь задает целое число, больше или равно 100 (например, 3801).
  * Определить третью цифру справа в этом числе (в данном случае 8).
@@ -101,13 +116,17 @@ fun trackLength(x1: Double, y1: Double, x2: Double, y2: Double): Double = TODO()
 fun thirdDigit(number: Int): Int = TODO()
 
 /**
- * Простая (2 балла)
+ * Простая (2 балла) РЕШЕНО
  *
  * Поезд вышел со станции отправления в h1 часов m1 минут (например в 9:25) и
  * прибыл на станцию назначения в h2 часов m2 минут того же дня (например в 13:01).
  * Определите время поезда в пути в минутах (в данном случае 216).
  */
-fun travelMinutes(hoursDepart: Int, minutesDepart: Int, hoursArrive: Int, minutesArrive: Int): Int = TODO()
+fun travelMinutes(hoursDepart: Int, minutesDepart: Int, hoursArrive: Int, minutesArrive: Int): Int {
+    val departInMin = hoursDepart * 60 + minutesDepart
+    val arriveInMin = hoursArrive * 60 + minutesArrive
+    return arriveInMin - departInMin
+}
 
 /**
  * Простая (2 балла)
