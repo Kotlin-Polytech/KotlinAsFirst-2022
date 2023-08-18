@@ -71,7 +71,7 @@ fun seconds(hours: Int, minutes: Int, seconds: Int): Int =
     (hours * 60 * 60 + minutes * 60 + seconds)
 
 fun main() {
-    println(travelMinutes(9, 25, 13, 1))
+    println(accountInThreeYears(100, 10))
 }
 
 /**
@@ -108,12 +108,18 @@ fun trackLength(x1: Double, y1: Double, x2: Double, y2: Double): Double {
 }
 
 /**
- * Простая (2 балла) Надо подумать
+ * Простая (2 балла) РЕШЕНО
  *
  * Пользователь задает целое число, больше или равно 100 (например, 3801).
  * Определить третью цифру справа в этом числе (в данном случае 8).
  */
-fun thirdDigit(number: Int): Int = TODO()
+fun thirdDigit(number: Int): Int {
+    if (number >= 100) {
+        val a = number / 100
+        val b = a % 10
+        return b
+    } else return 0
+}
 
 /**
  * Простая (2 балла) РЕШЕНО
@@ -129,18 +135,31 @@ fun travelMinutes(hoursDepart: Int, minutesDepart: Int, hoursArrive: Int, minute
 }
 
 /**
- * Простая (2 балла)
+ * Простая (2 балла) РЕШЕНО
  *
  * Человек положил в банк сумму в s рублей под p% годовых (проценты начисляются в конце года).
  * Сколько денег будет на счету через 3 года (с учётом сложных процентов)?
  * Например, 100 рублей под 10% годовых превратятся в 133.1 рубля
  */
-fun accountInThreeYears(initial: Int, percent: Int): Double = TODO()
+fun accountInThreeYears(initial: Int, percent: Int): Double {
+    val a = initial * percent / 100.0
+    val b = initial + a
+    val c = b * percent / 100.0 + b
+    val result = c * percent / 100.0 + c
+
+    return result
+}
 
 /**
- * Простая (2 балла)
+ * Простая (2 балла) РЕШЕНО
  *
  * Пользователь задает целое трехзначное число (например, 478).
  * Необходимо вывести число, полученное из заданного перестановкой цифр в обратном порядке (например, 874).
  */
-fun numberRevert(number: Int): Int = TODO()
+fun numberRevert(number: Int): Int {
+    val a = number / 100
+    val b = number % 10 * 100
+    val d = (number / 10) % 10 * 10
+    val result = b + d + a
+    return result
+}
