@@ -69,7 +69,7 @@ fun seconds(hours: Int, minutes: Int, seconds: Int): Int =
     (hours * 60 * 60 + minutes * 60 + seconds)
 
 fun main() {
-    println(thirdDigit(3801))
+    println(trackLength(3.0, 0.0, 0.0, 4.0))
 }
 
 /**
@@ -101,7 +101,7 @@ fun angleInRadian(deg: Int, min: Int, sec: Int): Double {
  * Например, расстояние между (3, 0) и (0, 4) равно 5
  */
 fun trackLength(x1: Double, y1: Double, x2: Double, y2: Double): Double {
-    val dSqr = (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1)
+    val dSqr = sqr(x2 - x1) + sqr(y2 - y1)
     return sqrt(dSqr)
 }
 
