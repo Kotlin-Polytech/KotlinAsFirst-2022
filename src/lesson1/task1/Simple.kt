@@ -1,5 +1,3 @@
-@file:Suppress("UNUSED_PARAMETER")
-
 package lesson1.task1
 
 import kotlin.math.*
@@ -71,7 +69,7 @@ fun seconds(hours: Int, minutes: Int, seconds: Int): Int =
     (hours * 60 * 60 + minutes * 60 + seconds)
 
 fun main() {
-    println(accountInThreeYears(100, 10))
+    println(thirdDigit(3801))
 }
 
 /**
@@ -114,11 +112,9 @@ fun trackLength(x1: Double, y1: Double, x2: Double, y2: Double): Double {
  * Определить третью цифру справа в этом числе (в данном случае 8).
  */
 fun thirdDigit(number: Int): Int {
-    if (number >= 100) {
         val a = number / 100
         val b = a % 10
-        return b
-    } else return 0
+    return b
 }
 
 /**
