@@ -136,12 +136,12 @@ fun ageDescription(age: Int): String {
                        (age == 181)||
                        (age == 191) -> "$age год"
 
-        else -> return ("namber is not in interval")
+        else -> return ("Wasted")
    }
 
 }
 
-fun main() = println(ageDescription(11))
+fun main() = println(ageDescription(0))
 
 /**
  * Простая (2 балла)
