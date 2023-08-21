@@ -67,10 +67,10 @@ fun circleInside(
     return (abs(r1 - r2) == d) || ((r1 + d) < r2)
 }
 
-fun main() = println(circleInside(1.0, 2.0, 3.0, 4.0, 5.0, 6.0))
+
 
 /**
- * Средняя (3 балла)
+ * Средняя (3 балла) РЕШЕНО
  *
  * Определить, пройдет ли кирпич со сторонами а, b, c сквозь прямоугольное отверстие в стене со сторонами r и s.
  * Стороны отверстия должны быть параллельны граням кирпича.
@@ -78,4 +78,16 @@ fun main() = println(circleInside(1.0, 2.0, 3.0, 4.0, 5.0, 6.0))
  * кирпич 4 х 4 х 4 пройдёт через отверстие 4 х 4.
  * Вернуть true, если кирпич пройдёт
  */
-fun brickPasses(a: Int, b: Int, c: Int, r: Int, s: Int): Boolean = TODO()
+fun brickPasses(a: Int, b: Int, c: Int, r: Int, s: Int): Boolean {
+   return if (a > b && a > c) {
+        b * c <= r * s
+    } else if (b > c && b > a) {
+        a * c <= r * s
+    } else if (c > a && c > b) {
+        a * b <= r * s
+    } else if (a == b && b == c) {
+       a * b <= r * s
+   } else false
+}
+
+fun main() = println(brickPasses(1, 2, 3, 4, 5))
