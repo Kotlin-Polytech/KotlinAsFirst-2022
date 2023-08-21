@@ -3,6 +3,8 @@
 package lesson2.task2
 
 import lesson1.task1.sqr
+import kotlin.math.abs
+import kotlin.math.sqrt
 
 /**
  * Пример
@@ -29,7 +31,6 @@ fun isNumberHappy(number: Int): Boolean {
     } else return false
 }
 
-fun main() = println(isNumberHappy(1111))
 
 /**
  * Простая (2 балла)
@@ -50,7 +51,7 @@ fun queenThreatens(x1: Int, y1: Int, x2: Int, y2: Int): Boolean = TODO()
 fun daysInMonth(month: Int, year: Int): Int = TODO()
 
 /**
- * Простая (2 балла)
+ * Простая (2 балла) РЕШЕНО
  *
  * Проверить, лежит ли окружность с центром в (x1, y1) и радиусом r1 целиком внутри
  * окружности с центром в (x2, y2) и радиусом r2.
@@ -59,7 +60,14 @@ fun daysInMonth(month: Int, year: Int): Int = TODO()
 fun circleInside(
     x1: Double, y1: Double, r1: Double,
     x2: Double, y2: Double, r2: Double
-): Boolean = TODO()
+): Boolean {
+    val dSqr = sqr(x2 - x1) + sqr(y2 - y1)
+    val d = sqrt(dSqr)
+
+    return (abs(r1 - r2) == d) || ((r1 + d) < r2)
+}
+
+fun main() = println(circleInside(1.0, 2.0, 3.0, 4.0, 5.0, 6.0))
 
 /**
  * Средняя (3 балла)
