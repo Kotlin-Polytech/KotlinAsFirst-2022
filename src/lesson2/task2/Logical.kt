@@ -68,7 +68,6 @@ fun circleInside(
 }
 
 
-
 /**
  * Средняя (3 балла) РЕШЕНО
  *
@@ -79,15 +78,15 @@ fun circleInside(
  * Вернуть true, если кирпич пройдёт
  */
 fun brickPasses(a: Int, b: Int, c: Int, r: Int, s: Int): Boolean {
-   return if (a > b && a > c) {
+    return if (a > b && a > c) {
         b * c <= r * s
     } else if (b > c && b > a) {
         a * c <= r * s
     } else if (c > a && c > b) {
         a * b <= r * s
     } else if (a == b && b == c) {
-       a * b <= r * s
-   } else false
+        a * b <= r * s
+    } else false
 }
 
 fun main() = println(brickPasses(1, 2, 3, 4, 5))
