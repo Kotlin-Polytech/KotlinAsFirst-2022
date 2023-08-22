@@ -3,6 +3,7 @@
 package lesson2.task1
 
 import lesson1.task1.discriminant
+import lesson1.task1.sqr
 import kotlin.math.max
 import kotlin.math.sqrt
 
@@ -173,7 +174,6 @@ fun timeForHalfWay(
 }
 
 
-
 /**
  * Простая (2 балла) РЕШЕНО
  *
@@ -215,14 +215,39 @@ fun rookOrBishopThreatens(
 ): Int = TODO()
 
 /**
- * Простая (2 балла)
+ * Простая (2 балла) НЕ РАБОТАЕТ
  *
  * Треугольник задан длинами своих сторон a, b, c.
  * Проверить, является ли данный треугольник остроугольным (вернуть 0),
  * прямоугольным (вернуть 1) или тупоугольным (вернуть 2).
  * Если такой треугольник не существует, вернуть -1.
  */
-fun triangleKind(a: Double, b: Double, c: Double): Int = TODO()
+@Suppress("UNREACHABLE_CODE")
+fun triangleKind(a: Double, b: Double, c: Double): Int {
+    return when (c >= a && c >= b) {
+        (sqr(c) < sqr(a) + sqr(b)) -> 0
+        (sqr(c) == sqr(a) + sqr(b)) -> 1
+        (sqr(c) > sqr(a) + sqr(b)) -> 2
+        else -> -1
+    }
+
+    return when (a >= b && a >= c) {
+        (sqr(a) < sqr(b) + sqr(c)) -> 0
+        (sqr(a) == sqr(b) + sqr(c)) -> 1
+        (sqr(a) > sqr(b) + sqr(c)) -> 2
+        else -> -1
+    }
+
+    return when (b >= a && b >= c) {
+        (sqr(b) < sqr(a) + sqr(c)) -> 0
+        (sqr(b) == sqr(a) + sqr(c)) -> 1
+        (sqr(b) > sqr(a) + sqr(c)) -> 2
+        else -> -1
+    }
+
+}
+
+fun main() = println(triangleKind(4.0, 6.0, 8.0))
 
 /**
  * Средняя (3 балла) РЕШЕНО
@@ -243,4 +268,3 @@ fun segmentLength(a: Int, b: Int, c: Int, d: Int): Int {
         d - a
     } else return -1
 }
-fun main() = println(segmentLength(1, 2, 3, 4))
