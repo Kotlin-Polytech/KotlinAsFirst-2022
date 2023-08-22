@@ -155,7 +155,24 @@ fun timeForHalfWay(
     t1: Double, v1: Double,
     t2: Double, v2: Double,
     t3: Double, v3: Double
-): Double = TODO()
+): Double {
+
+    val s1 = t1 * v1
+    val s2 = t2 * v2
+    val s3 = t3 * v3
+    val halfS = (s1 + s2 + s3) / 2
+
+    return if (halfS <= s1) {
+        halfS / v1
+    } else if ((halfS > s1) && (halfS <= (s1 + s2))) {
+        t1 + (halfS - s1) / v2
+    } else if (halfS > (s1 + s2) && halfS <= (s1 + s2 + s3)) {
+        t1 + t2 + (halfS - s1 - s2) / v3
+    } else return halfS
+
+}
+
+fun main() = println(timeForHalfWay(1.0, 2.0, 3.0, 4.0, 5.0, 6.0))
 
 /**
  * Простая (2 балла) РЕШЕНО
@@ -180,7 +197,6 @@ fun whichRookThreatens(
     } else 0
 }
 
-fun main() = println(whichRookThreatens(1, 2, 3, 4, 5, 6))
 
 /**
  * Простая (2 балла)
