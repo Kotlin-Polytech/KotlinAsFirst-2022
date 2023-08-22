@@ -145,7 +145,7 @@ fun ageDescription(age: Int): String {
 
 
 /**
- * Простая (2 балла)
+ * Простая (2 балла) РЕШЕНО
  *
  * Путник двигался t1 часов со скоростью v1 км/час, затем t2 часов — со скоростью v2 км/час
  * и t3 часов — со скоростью v3 км/час.
@@ -172,7 +172,7 @@ fun timeForHalfWay(
 
 }
 
-fun main() = println(timeForHalfWay(1.0, 2.0, 3.0, 4.0, 5.0, 6.0))
+
 
 /**
  * Простая (2 балла) РЕШЕНО
@@ -225,11 +225,22 @@ fun rookOrBishopThreatens(
 fun triangleKind(a: Double, b: Double, c: Double): Int = TODO()
 
 /**
- * Средняя (3 балла)
+ * Средняя (3 балла) РЕШЕНО
  *
  * Даны четыре точки на одной прямой: A, B, C и D.
  * Координаты точек a, b, c, d соответственно, b >= a, d >= c.
  * Найти длину пересечения отрезков AB и CD.
  * Если пересечения нет, вернуть -1.
  */
-fun segmentLength(a: Int, b: Int, c: Int, d: Int): Int = TODO()
+fun segmentLength(a: Int, b: Int, c: Int, d: Int): Int {
+    return if (b >= a && d >= c && a in c..d && b in c..d) {
+        b - a
+    } else if (b >= a && d >= c && c in a..b && d in a..b) {
+        d - c
+    } else if (b >= a && d >= c && b in c..d) {
+        b - c
+    } else if (b >= a && d >= c && d in a..b) {
+        d - a
+    } else return -1
+}
+fun main() = println(segmentLength(1, 2, 3, 4))
