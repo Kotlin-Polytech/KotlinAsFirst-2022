@@ -215,35 +215,28 @@ fun rookOrBishopThreatens(
 ): Int = TODO()
 
 /**
- * Простая (2 балла) НЕ РАБОТАЕТ
+ * Простая (2 балла) РЕШЕНО
  *
  * Треугольник задан длинами своих сторон a, b, c.
  * Проверить, является ли данный треугольник остроугольным (вернуть 0),
  * прямоугольным (вернуть 1) или тупоугольным (вернуть 2).
  * Если такой треугольник не существует, вернуть -1.
  */
-@Suppress("UNREACHABLE_CODE")
+
 fun triangleKind(a: Double, b: Double, c: Double): Int {
-    return when (c >= a && c >= b) {
-        (sqr(c) < sqr(a) + sqr(b)) -> 0
-        (sqr(c) == sqr(a) + sqr(b)) -> 1
-        (sqr(c) > sqr(a) + sqr(b)) -> 2
-        else -> -1
+
+    if (a >= b && a >= c) {
+        if ((sqr(a) < sqr(b) + sqr(c))) return 0
+        if ((sqr(a) == sqr(b) + sqr(c))) return 1
+        if ((sqr(a) > sqr(b) + sqr(c))) return 2
     }
 
-    return when (a >= b && a >= c) {
-        (sqr(a) < sqr(b) + sqr(c)) -> 0
-        (sqr(a) == sqr(b) + sqr(c)) -> 1
-        (sqr(a) > sqr(b) + sqr(c)) -> 2
-        else -> -1
+    if (c >= a && c >= b) {
+        if ((sqr(c) < sqr(a) + sqr(b))) return 0
+        if ((sqr(c) == sqr(a) + sqr(b))) return 1
+        if ((sqr(c) > sqr(a) + sqr(b))) return 2
     }
-
-    return when (b >= a && b >= c) {
-        (sqr(b) < sqr(a) + sqr(c)) -> 0
-        (sqr(b) == sqr(a) + sqr(c)) -> 1
-        (sqr(b) > sqr(a) + sqr(c)) -> 2
-        else -> -1
-    }
+    return -1
 
 }
 
