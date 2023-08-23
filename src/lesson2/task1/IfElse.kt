@@ -4,6 +4,7 @@ package lesson2.task1
 
 import lesson1.task1.discriminant
 import lesson1.task1.sqr
+import kotlin.math.abs
 import kotlin.math.max
 import kotlin.math.sqrt
 
@@ -199,7 +200,7 @@ fun whichRookThreatens(
 
 
 /**
- * Простая (2 балла)
+ * Простая (2 балла) РЕШЕНО
  *
  * На шахматной доске стоят черный король и белые ладья и слон
  * (ладья бьет по горизонтали и вертикали, слон — по диагоналям).
@@ -212,7 +213,16 @@ fun rookOrBishopThreatens(
     kingX: Int, kingY: Int,
     rookX: Int, rookY: Int,
     bishopX: Int, bishopY: Int
-): Int = TODO()
+): Int {
+    return if (kingX == rookX && abs(kingX - bishopX) == abs(kingY - bishopY) || kingY == rookY && abs(kingX - bishopX) == abs(kingY - bishopY)) {
+        3
+    } else if (kingX == rookX || kingY == rookY) {
+        1
+    } else if (abs(kingX - bishopX) == abs(kingY - bishopY)) {
+        2
+    } else 0
+}
+
 
 /**
  * Простая (2 балла) РЕШЕНО
@@ -240,7 +250,6 @@ fun triangleKind(a: Double, b: Double, c: Double): Int {
 
 }
 
-fun main() = println(triangleKind(4.0, 6.0, 8.0))
 
 /**
  * Средняя (3 балла) РЕШЕНО
