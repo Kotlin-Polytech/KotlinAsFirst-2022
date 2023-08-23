@@ -33,14 +33,15 @@ fun isNumberHappy(number: Int): Boolean {
 
 
 /**
- * Простая (2 балла)
+ * Простая (2 балла) РЕШЕНО
  *
  * На шахматной доске стоят два ферзя (ферзь бьет по вертикали, горизонтали и диагоналям).
  * Определить, угрожают ли они друг другу. Вернуть true, если угрожают.
  * Считать, что ферзи не могут загораживать друг друга.
  */
-fun queenThreatens(x1: Int, y1: Int, x2: Int, y2: Int): Boolean = TODO()
+fun queenThreatens(x1: Int, y1: Int, x2: Int, y2: Int): Boolean = x1 == x2 || y1 == y2 || abs(x1 - x2) == abs(y1 - y2)
 
+fun main() = println(queenThreatens(1, 2, 3, 4))
 
 /**
  * Простая (2 балла) РЕШЕНО
@@ -67,7 +68,6 @@ fun daysInMonth(month: Int, year: Int): Int {
 
 }
 
-fun main() = println(daysInMonth(1, 1990))
 
 /**
  * Простая (2 балла) РЕШЕНО
