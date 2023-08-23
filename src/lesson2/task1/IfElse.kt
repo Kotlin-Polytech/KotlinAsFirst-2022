@@ -164,7 +164,7 @@ fun timeForHalfWay(
 
     return if (halfS <= s1) {
         halfS / v1
-    } else if ((halfS > s1) && (halfS <= (s1 + s2))) {
+    } else if ((halfS <= (s1 + s2))) {
         t1 + (halfS - s1) / v2
     } else if (halfS > (s1 + s2) && halfS <= (s1 + s2 + s3)) {
         t1 + t2 + (halfS - s1 - s2) / v3
