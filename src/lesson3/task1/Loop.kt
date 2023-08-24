@@ -17,7 +17,7 @@ import kotlin.math.sqrt
 fun factorial(n: Int): Double {
     var result = 1.0
     for (i in 1..n) {
-        result = result * i // Please do not fix in master
+        result *= i // Please do not fix in master
     }
     return result
 }
@@ -65,14 +65,26 @@ fun digitCountInNumber(n: Int, m: Int): Int =
     }
 
 /**
- * Простая (2 балла)
+ * Простая (2 балла) РЕШЕНО
  *
  * Найти количество цифр в заданном числе n.
  * Например, число 1 содержит 1 цифру, 456 -- 3 цифры, 65536 -- 5 цифр.
  *
  * Использовать операции со строками в этой задаче запрещается.
  */
-fun digitNumber(n: Int): Int = TODO()
+fun digitNumber(n: Int): Int {
+
+    var count = 0
+    var number = n
+    if (number == 0) count++
+    while (number > 0) {
+        count++
+        number /= 10
+    }
+    return count
+}
+
+fun main() = println(digitNumber(10))
 
 /**
  * Простая (2 балла)
