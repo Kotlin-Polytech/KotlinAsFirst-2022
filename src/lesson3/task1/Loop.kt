@@ -93,14 +93,24 @@ fun digitNumber(n: Int): Int {
  */
 fun fib(n: Int): Int = if (n > 2) fib(n - 1) + fib(n - 2) else 1
 
-fun main() = println(fib(50))
 
 /**
- * Простая (2 балла)
+ * Простая (2 балла) РЕШЕНО
  *
  * Для заданного числа n > 1 найти минимальный делитель, превышающий 1
  */
-fun minDivisor(n: Int): Int = TODO()
+fun minDivisor(n: Int): Int {
+    var minDiv = 1
+    for (i in 2..n) {
+        if (n % i == 0) {
+            minDiv = i
+            break
+        }
+    }
+    return minDiv
+}
+
+fun main() = println(minDivisor(8))
 
 /**
  * Простая (2 балла)
