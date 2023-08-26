@@ -84,7 +84,7 @@ class Tests {
         assertEquals(102334155, fib(40))
         assertEquals(1134903170, fib(45))
         assertEquals(1836311903, fib(46))
-        // Just to calculate it
+        // Just to calculate it (При n = 47..50 выдает отрицательные значения)
         fib(50)
     }
 

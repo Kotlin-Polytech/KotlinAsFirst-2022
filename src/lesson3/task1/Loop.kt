@@ -84,15 +84,16 @@ fun digitNumber(n: Int): Int {
     return count
 }
 
-fun main() = println(digitNumber(1))
 
 /**
- * Простая (2 балла)
+ * Простая (2 балла) РЕШЕНО
  *
  * Найти число Фибоначчи из ряда 1, 1, 2, 3, 5, 8, 13, 21, ... с номером n.
  * Ряд Фибоначчи определён следующим образом: fib(1) = 1, fib(2) = 1, fib(n+2) = fib(n) + fib(n+1)
  */
-fun fib(n: Int): Int = TODO()
+fun fib(n: Int): Int = if (n > 2) fib(n - 1) + fib(n - 2) else 1
+
+fun main() = println(fib(50))
 
 /**
  * Простая (2 балла)
