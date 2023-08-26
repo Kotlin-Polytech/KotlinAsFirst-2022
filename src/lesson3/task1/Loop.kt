@@ -110,14 +110,24 @@ fun minDivisor(n: Int): Int {
     return minDiv
 }
 
-fun main() = println(minDivisor(8))
+
 
 /**
  * Простая (2 балла)
  *
  * Для заданного числа n > 1 найти максимальный делитель, меньший n
  */
-fun maxDivisor(n: Int): Int = TODO()
+fun maxDivisor(n: Int): Int {
+    var minDiv = 1
+    for (i in 2..n) {
+        if (n % i == 0 && i < n) {
+            minDiv = i
+        }
+    }
+    return minDiv
+}
+
+fun main() = println(maxDivisor(8))
 
 /**
  * Простая (2 балла)
