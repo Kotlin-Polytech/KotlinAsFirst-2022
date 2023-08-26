@@ -111,7 +111,6 @@ fun minDivisor(n: Int): Int {
 }
 
 
-
 /**
  * Простая (2 балла)
  *
@@ -127,10 +126,9 @@ fun maxDivisor(n: Int): Int {
     return minDiv
 }
 
-fun main() = println(maxDivisor(8))
 
 /**
- * Простая (2 балла)
+ * Простая (2 балла) РЕШЕНО
  *
  * Гипотеза Коллатца. Рекуррентная последовательность чисел задана следующим образом:
  *
@@ -145,7 +143,25 @@ fun main() = println(maxDivisor(8))
  * Написать функцию, которая находит, сколько шагов требуется для
  * этого для какого-либо начального X > 0.
  */
-fun collatzSteps(x: Int): Int = TODO()
+fun collatzSteps(x: Int): Int {
+
+    var counter = 0
+    var xNext = x
+
+    while (xNext != 1) {
+        if (xNext % 2 == 0) {
+            counter++
+            xNext = xNext / 2
+        } else {
+            counter++
+            xNext = xNext * 3 + 1
+        }
+
+    }
+    return counter
+}
+
+fun main() = println(collatzSteps(3))
 
 /**
  * Средняя (3 балла)
