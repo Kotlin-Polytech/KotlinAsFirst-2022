@@ -149,12 +149,12 @@ fun collatzSteps(x: Int): Int {
     var xNext = x
 
     while (xNext != 1) {
-        if (xNext % 2 == 0) {
+        xNext = if (xNext % 2 == 0) {
             counter++
-            xNext = xNext / 2
+            xNext / 2
         } else {
             counter++
-            xNext = xNext * 3 + 1
+            xNext * 3 + 1
         }
 
     }
