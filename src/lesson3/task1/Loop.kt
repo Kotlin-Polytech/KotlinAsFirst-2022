@@ -183,7 +183,7 @@ fun lcm(m: Int, n: Int): Int {
 
 
 /**
- * Средняя (3 балла)
+ * Средняя (3 балла) РЕШЕНО
  *
  * Определить, являются ли два заданных числа m и n взаимно простыми.
  * Взаимно простые числа не имеют общих делителей, кроме 1.
@@ -203,8 +203,6 @@ fun isCoPrime(m: Int, n: Int): Boolean {
 }
 
 
-fun main() = println(isCoPrime(64, 48))
-
 /**
  * Средняя (3 балла)
  *
@@ -212,7 +210,17 @@ fun main() = println(isCoPrime(64, 48))
  *
  * Использовать операции со строками в этой задаче запрещается.
  */
-fun revert(n: Int): Int = TODO()
+fun revert(n: Int): Int {
+    var n1 = n
+    var n2 = 0
+    while (n1 != 0) {
+        val d = n1 % 10
+        n1 /= 10
+        n2 = n2 * 10 + d
+    }
+    return n2
+}
+
 
 /**
  * Средняя (3 балла)
@@ -223,7 +231,18 @@ fun revert(n: Int): Int = TODO()
  *
  * Использовать операции со строками в этой задаче запрещается.
  */
-fun isPalindrome(n: Int): Boolean = TODO()
+fun isPalindrome(n: Int): Boolean {
+    var n1 = n
+    var n2 = 0
+    while (n1 != 0) {
+        val d = n1 % 10
+        n1 /= 10
+        n2 = n2 * 10 + d
+    }
+    return n2 == n
+}
+
+fun main() = println(isPalindrome(15751))
 
 /**
  * Средняя (3 балла)
